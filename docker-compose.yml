@@ -1,0 +1,10 @@
+version: "3.2"
+services:
+  app:
+    build: .
+    image: express-poc
+    ports:
+      - "4000:4000"
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+
