@@ -9,9 +9,9 @@ const sequelize = new Sequelize({
   logging: config.nodeEnv === 'test' ? false : console.log,
 });
 
-require('./dao/todo')(sequelize);
-require('./dao/user')(sequelize);
+require('./model/todo')(sequelize);
+require('./model/user')(sequelize);
 
-require('./associations.js')(sequelize.models);
+require('./associations')(sequelize.models);
 
 module.exports = sequelize;
