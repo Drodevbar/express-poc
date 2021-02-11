@@ -3,9 +3,10 @@ const config = require('../config');
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: 'db/database.sqlite',
+  storage: config.nodeEnv === 'test' ? 'db/database.test.sqlite' : 'db/database.sqlite',
   logQueryParameters: config.nodeEnv === 'dev',
   benchmark: config.nodeEnv === 'dev',
+  logging: config.nodeEnv === 'dev',
 });
 
 require('./dao/todo')(sequelize);

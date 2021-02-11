@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./src/index.js",
     "watch": "nodemon ./src/index.js",
-    "lint": "eslint . --ext .js --fix"
+    "lint": "eslint . --ext .js --fix",
+    "test:integration": "jest ./tests/integration/*.test.js --runInBand"
   },
   "author": "",
   "license": "ISC",
