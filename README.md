@@ -18,7 +18,7 @@ Simple API that enables CRUD operations on todo elements. Access to API is secur
 1. jwt
 1. supertest & jest (for integration testing purposes)
 1. sequalize as ORM and sqlite as database (for simplicity sake)
-Simple CI/CD provided by GitHub - in order to automate linting and running integration tests
+1. Simple CI/CD provided by GitHub - in order to automate linting and running integration tests
 
 
 ## API specification
