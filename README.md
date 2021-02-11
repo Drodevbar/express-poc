@@ -11,12 +11,14 @@
 Note: in order to change the port, see `docker-compose.yml`
 
 ## Brief outline
-Simple API that enables CRUD operations on todo elements. Access to API is secured via JWT token. In order to obtain it, API client has to create an account using auth endpoint (_see API specification_). That's just a simple PoC that shows how to easily create simple restricted CRUD with db operation using ORM framework (Sequelize in that case).
+Simple API that enables CRUD operations on todo elements. Access to API is secured via JWT token. In order to obtain it, API client has to create an account using auth endpoint (_see API specification_). That's just a simple PoC that shows how to easily create simple restricted CRUD with db operation using ORM framework (Sequelize in that case). The whole API is fully covered with integration tests.
 
 ## Buzzwords:
 1. express
 1. jwt
+1. supertest & jest (for integration testing purposes)
 1. sequalize as ORM and sqlite as database (for simplicity sake)
+Simple CI/CD provided by GitHub - in order to automate linting and running integration tests
 
 
 ## API specification
