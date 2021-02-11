@@ -1,7 +1,5 @@
-const config = require('../../../src/config');
 const { sign } = require('jsonwebtoken');
-
-const JWT_SECRET = 'secret';
+const config = require('../../../src/config');
 
 module.exports.secret = config.jwtSecret;
 

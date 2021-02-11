@@ -34,7 +34,7 @@ module.exports.createNewUser = async ({ email, password }) => {
 module.exports.createTodos = async (todos, user) => {
   const promises = todos.map((todo) => {
     const model = sequelize.models.Todo.build({
-      ...todo, userId: user.id
+      ...todo, userId: user.id,
     });
 
     return model.save();
@@ -42,7 +42,7 @@ module.exports.createTodos = async (todos, user) => {
 
   await Promise.all(promises);
 
-  return await sequelize.models.Todo.findAll();
+  return sequelize.models.Todo.findAll();
 };
 
 module.exports.fetchTodo = async (id) => sequelize.models.Todo.findByPk(id);

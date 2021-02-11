@@ -1,5 +1,4 @@
 const request = require('supertest');
-const todo = require('../../src/sequelize/dao/todo');
 const server = require('../../src/server');
 const databaseHelper = require('./util/database-helper');
 
@@ -159,7 +158,7 @@ describe('authentication', () => {
         .get(`/api/todo/${todoId}`)
         .set(authToken)
         .send();
-      
+
       expect(getRequest.status).toBe(404);
 
       const savedTodo = await databaseHelper.fetchTodo(todoId);
