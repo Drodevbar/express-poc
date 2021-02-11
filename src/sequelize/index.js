@@ -6,7 +6,7 @@ const sequelize = new Sequelize({
   storage: config.nodeEnv === 'test' ? 'db/database.test.sqlite' : 'db/database.sqlite',
   logQueryParameters: config.nodeEnv === 'dev',
   benchmark: config.nodeEnv === 'dev',
-  logging: config.nodeEnv === 'dev',
+  logging: config.nodeEnv === 'test' ? false : console.log,
 });
 
 require('./dao/todo')(sequelize);

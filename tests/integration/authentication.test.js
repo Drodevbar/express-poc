@@ -41,7 +41,22 @@ describe('authentication', () => {
       expect(response.status).toBe(200);
     });
 
-    it('should return 401 when credentials do not match', async () => {
+    it('should return new valid token and 200 status when valid credentials provided and previous token expired', async () => {
+      const credentials = {
+        email: 'foo@bar.com',
+        password: 'secret',
+      };
+      const user = await databaseHelper.createNewUser(credentials, '-10 seconds');
+
+      const response = await request(server)
+        .post('/api/auth/token')
+        .send(credentials);
+
+      expect(response.body.token).not.toEqual(user.token);
+      expect(response.status).toBe(200);
+    });
+
+    it('should return 401 status when credentials do not match', async () => {
       const credentials = {
         email: 'foo@bar.com',
         password: 'secret',

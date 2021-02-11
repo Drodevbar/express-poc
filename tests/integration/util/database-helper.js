@@ -20,10 +20,10 @@ module.exports.drop = async () => {
   }
 };
 
-module.exports.createNewUser = async ({ email, password }) => {
+module.exports.createNewUser = async ({ email, password }, jwtExpiresIn = '1 day') => {
   const user = sequelize.models.User.build({
     email,
-    token: jwtHelper.generate(email),
+    token: jwtHelper.generate(email, jwtExpiresIn),
     passwordHash: bcrypt.hashSync(password),
   });
   await user.save();
