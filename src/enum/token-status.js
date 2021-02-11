@@ -1,5 +1,5 @@
 module.exports.tokenStatus = {
-  VALID: 0,
-  INVALID: 1,
-  EXPIRED: 2,
+  VALID: 'Valid',
+  INVALID: 'Invalid',
+  EXPIRED: 'Expired',
 };

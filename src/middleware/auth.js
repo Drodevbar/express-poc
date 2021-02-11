@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
 
   if (tokenDetails.status !== tokenStatus.VALID) {
     return res.status(401).json({
-      message: `Invalid token provided [${token}]`,
+      message: `${tokenDetails.status} token provided`,
     });
   }
 
