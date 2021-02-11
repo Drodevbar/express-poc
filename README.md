@@ -9,7 +9,7 @@
 1. app is available on `localhost:4000`
 
 ## Brief outline
-Simple API that enabled CRUD operation on todo elements. Access to API is secured via JWT token. In order to obtain it, API user has to create an accouunt using auth endpoint (_see API specification_). That's just a simple PoC that should show how to easily create simple restricted CRUD with db operation using ORM framework (Sequelize in that case).
+Simple API that enables CRUD operations on todo elements. Access to API is secured via JWT token. In order to obtain it, API client has to create an account using auth endpoint (_see API specification_). That's just a simple PoC that shows how to easily create simple restricted CRUD with db operation using ORM framework (Sequelize in that case).
 
 ## Buzzwords:
 1. express
@@ -20,6 +20,8 @@ Note: in order to change the port, see `docker-compose.yml`
 
 
 ## API specification
+
+### Authorization
 
 #### 1. Acquiring access token
 
